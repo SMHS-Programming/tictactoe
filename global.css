@@ -23,9 +23,11 @@ td {
 	text-align: center;
 	font-size: 10em;
 }
-td.borderBott {
+
+tr:nth-child(-n+2) td {
 	border-bottom: thin black solid;
 }
-td.borderRig {
+
+td:nth-child(-n+2) {
 	border-right: thin black solid;
 }
