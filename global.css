@@ -3,7 +3,7 @@
     src: url(scp.ttf);
 }
 @font-face {
-    font-family: "San Francisco Display";
+    font-family: 'San Francisco Display';
     src: url(sfd.ttf);
 }
 
@@ -22,6 +22,7 @@ table {
 td {
 	text-align: center;
 	font-size: 10em;
+	width: 30%;
 }
 
 tr:nth-child(-n+2) td {
@@ -30,4 +31,9 @@ tr:nth-child(-n+2) td {
 
 td:nth-child(-n+2) {
 	border-right: thin black solid;
+}
+
+span {
+	font-size: 100px;
+	margin: 0 auto;
 }
