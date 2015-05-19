@@ -23,6 +23,7 @@ td {
 	text-align: center;
 	font-size: 10em;
 	width: 30%;
+	height: 200px;
 }
 
 tr:nth-child(-n+2) td {

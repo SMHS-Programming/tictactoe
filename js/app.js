@@ -18,7 +18,7 @@ angular.module('tictactoe', []).
 
         function translate(pid) {
             if(pid === 0)
-                return ' ';
+                return '_';
             else if(pid === -1)
                 return 'O';
             else if(pid === 1)
