@@ -16,14 +16,19 @@ angular.module('tictactoe', []).
         $scope.getCell = getCell;
         $scope.setCell = setCell;
 
-        $scope.cellToString = function(x, y) {
-            var val = getCell(x, y);
-            if(val === 0)
+        function translate(pid) {
+            if(pid === 0)
                 return '_';
-            else if(val === 1)
+            else if(pid === -1)
+                return 'O';
+            else if(pid === 1)
                 return 'X';
-            else if(val === -1)
-                return '0'
+        }
+        $scope.translate = translate;
+
+
+        $scope.cellToString = function(x, y) {
+            return translate(getCell(x, y));
         };
 
         $scope.currentPlayer = -1;
@@ -40,6 +45,7 @@ angular.module('tictactoe', []).
             setCell(x, y, $scope.currentPlayer);
 
             $scope.switchPlayer();
+            $scope.$apply();
         };
 
         function checkVector(x, y, dx, dy) {
