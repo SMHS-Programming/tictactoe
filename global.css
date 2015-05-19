@@ -19,11 +19,13 @@ table {
 	margin: 0 5%;
 }
 
-tr {
-	border-bottom: thin black solid;
-}
-
 td {
 	text-align: center;
 	font-size: 10em;
+}
+td.borderBott {
+	border-bottom: thin black solid;
+}
+td.borderRig {
+	border-right: thin black solid;
 }
