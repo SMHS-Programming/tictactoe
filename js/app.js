@@ -39,7 +39,7 @@ angular.module('tictactoe', []).
 
             setCell(x, y, $scope.currentPlayer);
 
-            scope.switchPlayer();
+            $scope.switchPlayer();
         };
 
         function checkVector(x, y, dx, dy) {
