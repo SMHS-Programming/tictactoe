@@ -45,6 +45,10 @@ angular.module('tictactoe', []).
 
             $scope.switchPlayer();
             $scope.$apply();
+
+            var winner;
+            if((winner = $scope.isWinningState()) !== 0)
+                alert('winner ' + translate(winner));
         };
 
         function checkVector(x, y, dx, dy) {
@@ -69,7 +73,7 @@ angular.module('tictactoe', []).
 
             if((result = checkVector(0, 0, 1, 1)) !== 0)
                 return result;
-            else if((result = checkVector(2, 0, -1, 0)) !== 0)
+            else if((result = checkVector(2, 0, -1, 1)) !== 0)
                 return result;
 
             return 0;
