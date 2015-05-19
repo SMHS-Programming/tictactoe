@@ -41,20 +41,30 @@ angular.module('tictactoe', []).
             scope.switchPlayer();
         };
 
+        function checkVector(x, y, dx, dy) {
+            var initial = getCell(x, y);
+            for(var i = 0; i < 2; ++i) {
+                x += dx;
+                y += dy;
+                if(getCell(x,y) !== initial)
+                    return 0;
+            }
+            return initial;
+        }
+
         $scope.isWinningState = function() {
+            var result;
             for(var i = 0; i < 3; ++i) {
-                if(getCell(i, 0) !== 0 && getCell(i, 0) === getCell(i, 1) && getCell(i, 1) === getCell(i, 2)) {
-                    return getCell(i, 0);
-                } else if(getCell(0, i) !== 0 && getCell(0, i) === getCell(1, i) && getCell(1, i) == getCell(2, i)) {
-                    return getCell(0, i);
-                }
+                if((result = checkVector(i, 0, 0, 1)) !== 0)
+                    return result;
+                else if((result = checkVector(0, i, 1, 0)) !== 0)
+                    return result;
             }
 
-            if(getCell(0,0) !== 0 && getCell(0,0) == getCell(1,1) && getCell(1,1) == getCell(2,2)) {
-                return getCell(0,0);
-            } else if(getCell(2, 0) !== 0 && getCell(2, 0) === getCell(1, 1) && getCell(1,1) == getCell(0, 2)) {
-                return getCell(2, 0);
-            }
+            if((result = checkVector(0, 0, 1, 1)) !== 0)
+                return result;
+            else if((result = checkVector(2, 0, -1, 0)) !== 0)
+                return result;
 
             return 0;
         }
