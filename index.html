@@ -15,6 +15,6 @@
 				</tr>
 			</tbody>
 		</table>
-		<span>{{winner.name}} is the winner</span>
+		<span ng-if="isWinningState() !== 0">{{translate(isWinningState())	}} is the winner</span>
 	</body>
 </html>

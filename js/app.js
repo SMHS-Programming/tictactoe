@@ -38,7 +38,9 @@ angular.module('tictactoe', []).
         };
 
         $scope.placeTack = function(x, y) {
-            // TODO: throw an error when the square is already occupied.
+            if(isWinningState() !== 0)
+                return ;
+
             if(getCell(x, y) !== 0)
                 return alert('oh no! this cell is already occupied!');
 
