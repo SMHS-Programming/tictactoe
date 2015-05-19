@@ -3,6 +3,7 @@ angular.module('tictactoe', []).
         $scope.grid = [null, null, null].map(function() {
             return [0, 0, 0];
         });
+        $scope.loopable = [0, 1, 2];
 
         function getCell(x, y) {
             return $scope.grid[y][x];
@@ -18,7 +19,7 @@ angular.module('tictactoe', []).
         $scope.cellToString = function(x, y) {
             var val = getCell(x, y);
             if(val === 0)
-                return ' ';
+                return '_';
             else if(val === 1)
                 return 'X';
             else if(val === -1)
