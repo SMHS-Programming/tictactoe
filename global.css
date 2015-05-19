@@ -15,14 +15,17 @@
 
 table {
 	font-family: "Source Code Pro", 'Monaco', monospace;
-	width: 100%;
-}
-
-tr {
-	width: 100%;
+	width: 90%;
+	margin: 0 5%;
 }
 
 td {
 	text-align: center;
 	font-size: 10em;
+}
+td.borderBott {
+	border-bottom: thin black solid;
+}
+td.borderRig {
+	border-right: thin black solid;
 }
