@@ -1,1 +1,5 @@
-global.css
+* {
+	padding: 0;
+	margin: 0;
+	font-family: 'San Francisco Display', 'Helvetica', sans-serif;
+}
