@@ -38,9 +38,6 @@ angular.module('tictactoe', []).
         };
 
         $scope.placeTack = function(x, y) {
-            if(isWinningState() !== 0)
-                return ;
-
             if(getCell(x, y) !== 0)
                 return alert('oh no! this cell is already occupied!');
 
