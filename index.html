@@ -11,7 +11,8 @@
 		<table>
 			<tbody>
 				<tr ng-repeat="y in loopable">
-					<td ng-repeat="x in loopable" ng-click="placeTack(x, y)">{{cellToString(x,y)}}</td>
+					<td ng-repeat="x in loopable" ng-click="placeTack(x, y)">
+					<div>{{cellToString(x,y)}}</div></td>
 				</tr>
 			</tbody>
 		</table>

@@ -11,6 +11,15 @@
 	padding: 0;
 	margin: 0;
 	font-family: 'San Francisco Display', 'Helvetica', sans-serif;
+	color: white;
+}
+
+html {
+	height: 100vh;
+	background-image: url(bg.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
 }
 
 h1 {
@@ -20,25 +29,43 @@ h1 {
 table {
 	font-family: "Source Code Pro", 'Monaco', monospace;
 	width: 90%;
-	margin: 0 5%;
+	max-width: 600px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 td {
 	text-align: center;
-	font-size: 10em;
+	font-size: 800%;
 	width: 30%;
-	height: 200px;
+	position: relative;
+	max-width: 200px;
+	padding: 0;
+}
+
+td:before{
+	content: "";
+	display: block;
+	padding-top: 100%; 	/* initial ratio of 1:1*/
+}
+
+td div {
+	position:  absolute;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	vertical-align: auto;
 }
 
 tr:nth-child(-n+2) td {
-	border-bottom: thin black solid;
+	border-bottom: thin white solid;
 }
 
 td:nth-child(-n+2) {
-	border-right: thin black solid;
+	border-right: thin white solid;
 }
 
 span {
-	font-size: 100px;
+	font-size: 2.5em;
 	margin: 0 auto;
 }
