@@ -18,7 +18,7 @@ angular.module('tictactoe', []).
 
         function translate(pid) {
             if(pid === 0)
-                return '_';
+                return ' ';
             else if(pid === -1)
                 return 'O';
             else if(pid === 1)
@@ -38,8 +38,9 @@ angular.module('tictactoe', []).
         };
 
         $scope.placeTack = function(x, y) {
-            if(getCell(x, y) !== 0)
-                return alert('oh no! this cell is already occupied!');
+            if(getCell(x, y) !== 0){
+                //return alert('oh no! this cell is already occupied!');
+            }
 
             setCell(x, y, $scope.currentPlayer);
 
@@ -47,8 +48,9 @@ angular.module('tictactoe', []).
             $scope.$apply();
 
             var winner;
-            if((winner = $scope.isWinningState()) !== 0)
-                alert('winner ' + translate(winner));
+            if((winner = $scope.isWinningState()) !== 0){
+                //alert('winner ' + translate(winner));
+            }
         };
 
         function checkVector(x, y, dx, dy) {
