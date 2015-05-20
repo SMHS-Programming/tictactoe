@@ -13,6 +13,14 @@ angular.module('tictactoe', []).
             $scope.grid[y][x] = val;
         }
 
+        $scope.clearBoard = function() {
+            for(x in $scope.loopable){
+                for(y in $scope.loopable){
+                    $scope.setCell(x, y, 0);
+                }
+            }
+        }
+
         $scope.getCell = getCell;
         $scope.setCell = setCell;
 
@@ -42,15 +50,14 @@ angular.module('tictactoe', []).
                 //return alert('oh no! this cell is already occupied!');
             }
 
+            if((winner = $scope.isWinningState()) !== 0) $scope.clearBoard();
+
             setCell(x, y, $scope.currentPlayer);
 
             $scope.switchPlayer();
             $scope.$apply();
 
             var winner;
-            if((winner = $scope.isWinningState()) !== 0){
-                //alert('winner ' + translate(winner));
-            }
         };
 
         function checkVector(x, y, dx, dy) {
